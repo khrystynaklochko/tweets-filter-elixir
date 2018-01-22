@@ -1,21 +1,12 @@
+# Looks like extwitter do not provide streaming without filter, so arch is [producer] -> [consumer].
+
 # TweetsFilterElixir
 
-**TODO: Add description**
+Library for filtering tweets by 'startup' word.
+Run app in console and see tweets with word 'startup' in console.
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `tweets_filter_elixir` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:tweets_filter_elixir, "~> 0.1.0"}
-  ]
-end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/tweets_filter_elixir](https://hexdocs.pm/tweets_filter_elixir).
-
+mix deps.get
+mix run --no-halt
+```

@@ -14,7 +14,7 @@ defmodule TweetsFilterElixir.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
+      extra_applications: [:logger, :extwitter, :gen_stage],
       mod: {TweetsFilterElixir.Application, []}
     ]
   end
@@ -22,8 +22,11 @@ defmodule TweetsFilterElixir.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
+      {:gen_stage, "~> 0.13.0"},
+      {:poison, "~> 3.1"},
+      {:httpoison, "~> 1.0"},
+      {:extwitter, "~> 0.9.1"},
+      {:hackney, "~> 1.10"}
     ]
   end
 end

@@ -6,14 +6,13 @@ defmodule TweetsFilterElixir.Application do
   use Application
 
   def start(_type, _args) do
-    # List all child processes to be supervised
+    import Supervisor.Spec, warn: false
+
     children = [
-      # Starts a worker by calling: TweetsFilterElixir.Worker.start_link(arg)
-      # {TweetsFilterElixir.Worker, arg},
+      worker(TweetsFilterElixir.Producer, ["startup"]),
+      worker(TweetsFilterElixir.Consumer, [], id: 1)
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
     opts = [strategy: :one_for_one, name: TweetsFilterElixir.Supervisor]
     Supervisor.start_link(children, opts)
   end
